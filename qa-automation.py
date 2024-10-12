@@ -104,30 +104,26 @@ def generate_issue_description_and_fix_recommendation(name_of_dataset, combined_
         if is_quality_issue or issues:
             issues_description = summarize_issue_description(data)
 
-            messages_prompt = (
-                "Please review the following code and summarize any quality issues you identify, "
-                "along with recommendations for fixing these problems.\n"
-                f"Here is the existing code:\n{solution}\n"
-                f"And the task description:\n{task_description}\n\n"
-                "In your response, please include two sections:\n"
-                "1. Issue Description: Summarize the code issues found and clearly indicate the line numbers for each issue, if applicable.\n"
-                "2. Fix Recommendations: Provide specific suggestions for improvements in the code. "
-                "Additionally, check for any other issues beyond those mentioned and include the corresponding line numbers for each."
+            system_prompt = (
+                f"Your task is to review and provide feedback on a {lang} program. "
+                "You should focus on identifying any quality issues in the code and providing recommendations to improve it."
             )
 
-            messages = [
-                {"role": "system", "content": f"Your task is to summarize code issues and provide recommendations for a {lang} program."},
-                {"role": "user", "content": messages_prompt},
-                {"role": "assistant", "content": f"Here is the existing code:\n{solution}"},
-                {"role": "user", "content": f"The generated code has some issues:\n{issues_description}. Please review and provide an improved implementation, clearly separating the two sections."},
-                {"role": "user", "content": "In addition to the issues listed, if you find any other potential issues or quality concerns, please include them in your response."}
-            ]
+            user_prompt = (
+                "Please review the following code and summarize any quality issues you identify, "
+                "along with specific recommendations for fixing these problems. "
+                "Also, ensure that your response includes line numbers where applicable.\n\n"
+                f"Here is the existing code:\n{solution}\n\n"
+                f"Task description:\n{task_description}\n\n"
+                f"Quality issue detected by Static Analysis Tools:\n{issues_description}\n\n"
+                "In your response, include two sections:\n"
+                "1. **Issue Description**: Summarize the code issues, extend the issue's context, found and clearly indicate the line numbers for each issue, if applicable.\n"
+                "2. **Fix Recommendations**: Provide detailed suggestions as specifically as possible for improvements in the code. "
+                "REMEMBER: find any additional issues (if there exists) or quality concerns and include their corresponding line numbers."
+            )
 
-            chatter = Chatter(system_message="Your system message here")
-            response = chatter.call_openai_api(messages_prompt)
-
-            full_response = response['message']
-
+            chatter = Chatter(system_message=system_prompt)
+            full_response = chatter.chat(user_prompt)
 
             issue_desc_start = full_response.find("Issue Description:")
             fix_recommendation_start = full_response.find("Fix Recommendations:")
