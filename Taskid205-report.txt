@@ -1,0 +1,22 @@
+Task ID: 205
+Issue Description:
+1. E305: The code violates PEP 8 style guide by not having two blank lines after the function definition. (line 1)
+2. W292: The code does not have a newline at the end of the file. (line 12)
+3. C0304: The code does not have a final newline. (line 11)
+4. C0114: The code is missing a module docstring. (line 1)
+5. C0103: The module name "205-inversion_elements" does not conform to snake_case naming style. (line 1)
+6. C0116: The function is missing a docstring. (line 1)
+7. W0621: The variable 'test_tup' is redefined from outer scope. (line 9)
+8. W0621: The variable 'inversions' is redefined from outer scope. (line 10)
+9. C0200: The code can use enumerate instead of iterating with range and len. (line 3)
+
+Fix Recommendation:
+1. Add two blank lines after the function definition to conform to PEP 8 style guide. (line 1)
+2. Add a newline at the end of the file. (line 12)
+3. Add a final newline. (line 11)
+4. Add a module docstring to describe the purpose of the module. (line 1)
+5. Rename the module to follow snake_case naming style. (line 1)
+6. Add a docstring to describe the purpose of the function. (line 1)
+7. Rename the variable to avoid redefining it from outer scope. (line 9)
+8. Rename the variable to avoid redefining it from outer scope. (line 10)
+9. Use enumerate instead of iterating with range and len. (line 3)

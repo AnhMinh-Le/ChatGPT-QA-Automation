@@ -1,0 +1,18 @@
+Task ID: 203
+Issue Description:
+1. E305: There should be two blank lines after the function definition, but only one is present. (Line 1)
+2. E261: There should be at least two spaces before inline comments, but only one space is present. (Lines 3 and 6)
+3. W292: There is no newline at the end of the file. (Line 12)
+4. C0304: There is no final newline at the end of the file. (Line 12)
+5. C0114: There is no module docstring. (Line 1)
+6. C0103: The module name "203-hamming_Distance" does not conform to snake_case naming style. (Line 1)
+7. C0116: There is no function docstring. (Line 1)
+
+Fix Recommendation:
+1. Add an extra blank line after the function definition. (Line 1)
+2. Add an extra space before inline comments. (Lines 3 and 6)
+3. Add a newline at the end of the file. (Line 12)
+4. Add a final newline at the end of the file. (Line 12)
+5. Add a module docstring to describe the purpose of the code. (Line 1)
+6. Rename the module to "hamming_distance" to conform to snake_case naming style. (Line 1)
+7. Add a function docstring to describe the input and output of the function. (Line 1)

@@ -1,0 +1,31 @@
+Task ID: 201
+Issue Description:
+1. Line 1: The module name "201-chkList" doesn't conform to snake_case naming style.
+2. Line 1: Missing module docstring.
+3. Line 6: Final newline missing.
+4. Line 7: Missing function or method docstring.
+5. Line 7: Function name "chkList" doesn't conform to snake_case naming style.
+6. Line 3: The if statement can be replaced with 'return bool(test)'.
+7. Line 5: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it.
+
+Fix Recommendation:
+1. Rename the module to conform to snake_case naming style.
+2. Add a module docstring to describe the purpose of the module.
+3. Add a final newline at the end of the file.
+4. Add a function docstring to describe the purpose of the function.
+5. Rename the function to conform to snake_case naming style.
+6. Replace the if statement with 'return bool(test)' to simplify the code.
+7. Remove the "else" and de-indent the code inside it to make the code more readable.
+Here is the updated code:
+```
+def check_list(lst):
+    """
+    Check if all elements in the list are the same.
+    Args:
+    lst: A list of elements.
+    Returns:
+    True if all elements in the list are the same, False otherwise.
+    """
+    test = all(elem == lst[0] for elem in lst)
+    return bool(test)
+```
