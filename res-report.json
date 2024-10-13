@@ -1,0 +1,148 @@
+[
+    {
+        "task_id": "125",
+        "solution": "def find_length(string, n):\n\n    # Initialize variables to keep track of maximum difference and count of 0s and 1s\n\n    max_diff = 0\n\n    count_0 = 0\n\n    count_1 = 0\n\n    \n\n    # Loop through the string\n\n    for i in range(n):\n\n        # If the current character is 0, increment count_0\n\n        if string[i] == '0':\n\n            count_0 += 1\n\n        # If the current character is 1, increment count_1\n\n        else:\n\n            count_1 += 1\n\n        \n\n        # Calculate the difference between count_0 and count_1\n\n        diff = count_0 - count_1\n\n        \n\n        # If the difference is greater than the current max_diff, update max_diff\n\n        if diff > max_diff:\n\n            max_diff = diff\n\n        \n\n        # If the count of 0s and 1s is equal, reset the counts\n\n        if count_0 == count_1:\n\n            count_0 = 0\n\n            count_1 = 0\n\n    \n\n    return max_diff",
+        "is_quality_issue": 1,
+        "issues": [
+            {
+                "tool": "flake8",
+                "issue_code": "E501",
+                "issue_description": "The only quality issue in the code is that the line 10 is too long, exceeding the recommended maximum of 79 characters.",
+                "fix_recommendation": "To fix this issue, we can break the line 10 into multiple lines using parentheses to indicate that the statement is continued on the next line. For example, we can modify line 10 as follows:\n\ndiff = (count_0 - count_1)"
+            },
+            {
+                "tool": "flake8",
+                "issue_code": "W293",
+                "issue_description": "The code has whitespace on blank lines which violates PEP 8 style guide.",
+                "fix_recommendation": "Remove the whitespace on blank lines to adhere to PEP 8 style guide. This can be done by deleting the extra spaces on lines 7, 9, 11, 17, and 23."
+            },
+            {
+                "tool": "flake8",
+                "issue_code": "E501",
+                "issue_description": "The only quality issue in the code is that the line 9 is too long, exceeding the recommended maximum length of 79 characters.",
+                "fix_recommendation": "To fix this issue, we can break the line 9 into multiple lines using parentheses to indicate that the statement continues on the next line. For example, we can modify line 9 as follows:\n\ndiff = (count_0 - count_1)"
+            },
+            {
+                "tool": "flake8",
+                "issue_code": "W292",
+                "issue_description": "The code lacks a newline at the end of the file, which is a minor formatting issue.",
+                "fix_recommendation": "Add a newline at the end of the file to comply with PEP 8 guidelines. This can be done by simply adding a blank line at the end of the file."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0303",
+                "issue_description": "The code has trailing whitespace at the end of line 6.",
+                "fix_recommendation": "Remove the trailing whitespace at the end of line 6 to improve code readability and consistency."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0303",
+                "issue_description": "The code has trailing whitespace at the end of line 15, which violates the PEP 8 style guide.",
+                "fix_recommendation": "Remove the trailing whitespace at the end of line 15 to comply with the PEP 8 style guide."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0303",
+                "issue_description": "The code has trailing whitespace at the end of line 18, which violates the PEP 8 style guide.",
+                "fix_recommendation": "Remove the trailing whitespace at the end of line 18 to comply with the PEP 8 style guide."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0303",
+                "issue_description": "The code has trailing whitespace at the end of the line, which is flagged as an issue by the static analysis tool.",
+                "fix_recommendation": "Remove the trailing whitespace at the end of the line to improve code readability and maintainability. This can be done manually by deleting the whitespace or by using an automated tool to remove trailing whitespace."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0303",
+                "issue_description": "The code has trailing whitespace at the end of the line, which is flagged as an issue by the static analysis tool.",
+                "fix_recommendation": "Remove the trailing whitespace at the end of the line to improve code readability and maintainability. This can be done manually by deleting the whitespace or by using an IDE or text editor that automatically removes trailing whitespace."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0304",
+                "issue_description": "The code lacks a final newline at the end of the file, which is a minor issue but can cause problems when running the code on some systems.",
+                "fix_recommendation": "Add a final newline at the end of the file to ensure that the code runs smoothly on all systems. This can be done by simply adding a blank line at the end of the file."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0114",
+                "issue_description": "The code lacks a module docstring which is a brief description of what the module does. This makes it difficult for other developers to understand the purpose of the module.",
+                "fix_recommendation": "Add a module docstring at the beginning of the code to provide a brief description of what the module does. For example, \"# This module contains a function to find the maximum difference between the count of 0s and 1s in a string.\""
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0103",
+                "issue_description": "The function name \"find_length\" does not conform to the snake_case naming style, which is recommended for Python functions.",
+                "fix_recommendation": "Rename the function to \"find_length_snake_case\" or \"find_length_with_underscore\" to conform to the snake_case naming style."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0116",
+                "issue_description": "The function 'find_length' is missing a docstring which makes it difficult for other developers to understand the purpose of the function and how to use it.",
+                "fix_recommendation": "Add a docstring to the 'find_length' function that explains its purpose, parameters, and return value. For example:\n\n```\ndef find_length(string: str, n: int) -> int:\n    \"\"\"\n    Finds the maximum difference between the count of 0s and 1s in a given string.\n\n    Parameters:\n    string (str): The input string.\n    n (int): The length of the input string.\n\n    Returns:\n    int: The maximum difference between the count of 0s and 1s in the input string.\n    \"\"\"\n    # Initialize variables to keep track of maximum difference and count of 0s and 1s\n    max_diff = 0\n    count_0 = 0\n    count_1 = 0\n    \n    # Loop through the string\n    for i in range(n):\n        # If the current character is 0, increment count_0\n        if string[i] == '0':\n            count_0 += 1\n        # If the current character is 1, increment count_1\n        else:\n            count_1 += 1\n        \n        # Calculate the difference between count_0 and count_1\n        diff = count_0 - count_1\n        \n        # If the difference is greater than the current max_diff, update max_diff\n        if diff > max_diff:\n            max_diff = diff\n        \n        # If the count of 0s and 1s is equal, reset the counts\n        if count_0 == count_1:\n            count_0 = 0\n            count_1 = 0\n    \n    return max_diff\n``` \n\nAdditionally, it would be helpful to add some comments within the function to explain the logic and purpose of each step."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "R1731",
+                "issue_description": "The code has a quality issue with the unnecessary if block in line 20. The code can be improved by using the max() function instead of the if block.",
+                "fix_recommendation": "To fix the issue, replace the if block in line 20 with the max() function. The updated code is as follows:\n\nReplace:\n```\nif diff > max_diff:\n    max_diff = diff\n```\nwith:\n```\nmax_diff = max(max_diff, diff)\n```\nThis will simplify the code and make it more readable."
+            }
+        ]
+    },
+    {
+        "task_id": "126",
+        "solution": "def sum(a, b):\n\n    # Find the smaller number between a and b\n\n    smaller = min(a, b)\n\n    # Initialize the sum of common divisors to zero\n\n    common_divisors_sum = 0\n\n    # Loop through all the numbers from 1 to the smaller number\n\n    for i in range(1, smaller+1):\n\n        # Check if i is a divisor of both a and b\n\n        if a % i == 0 and b % i == 0:\n\n            # If i is a common divisor, add it to the sum\n\n            common_divisors_sum += i\n\n    # Return the sum of common divisors\n\n    return common_divisors_sum\n\n\n\nprint(sum(12, 18)) # Output: 6",
+        "is_quality_issue": 1,
+        "issues": [
+            {
+                "tool": "flake8",
+                "issue_code": "E305",
+                "issue_description": "The code violates PEP 8 style guide by not having two blank lines after the function definition.",
+                "fix_recommendation": "Add two blank lines after the function definition to comply with PEP 8 style guide. For example, add two blank lines after line 3."
+            },
+            {
+                "tool": "flake8",
+                "issue_code": "E261",
+                "issue_description": "The code violates PEP 8 style guide by not having at least two spaces before inline comments. This can make the code harder to read and less consistent.",
+                "fix_recommendation": "Add at least two spaces before inline comments to improve readability and consistency. For example, change \"# Find the smaller number between a and b\" to \"  # Find the smaller number between a and b\". This should be done for all inline comments in the code."
+            },
+            {
+                "tool": "flake8",
+                "issue_code": "W292",
+                "issue_description": "The code lacks a newline at the end of the file, which is a minor formatting issue.",
+                "fix_recommendation": "Add a newline at the end of the file to improve readability and conform to PEP 8 standards. This can be done by simply adding a blank line at the end of the file."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0304",
+                "issue_description": "The code is missing a final newline at the end of the file, which is a common convention in Python code.",
+                "fix_recommendation": "Add a final newline at the end of the file to follow the common convention in Python code. This can be done by simply adding a blank line at the end of the file."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0114",
+                "issue_description": "The code lacks a module docstring which is a brief description of the module's purpose, contents, and any other relevant information.",
+                "fix_recommendation": "Add a module docstring to the code to provide a brief description of the module's purpose, contents, and any other relevant information. For example, a module docstring can be added at the beginning of the code as follows:\n\n```\n\"\"\"\nThis module contains a function that finds the sum of common divisors between two numbers.\n\"\"\"\ndef sum(a, b):\n    ...\n```\nThis will help other developers understand the purpose of the module and its contents."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0103",
+                "issue_description": "The module name \"126-sum\" doesn't conform to snake_case naming style.",
+                "fix_recommendation": "Rename the module to \"sum_module\" or any other name that follows the snake_case naming convention."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "W0622",
+                "issue_description": "The code has a warning message that the built-in function 'sum' is being redefined, which can cause unexpected behavior in the program.",
+                "fix_recommendation": "To avoid any unexpected behavior, it is recommended to rename the function to something else. For example, we can rename the function to 'common_divisors_sum' to make it more descriptive and avoid any naming conflicts with built-in functions. This can be done by changing the function name from 'sum' to 'common_divisors_sum' on line 1."
+            },
+            {
+                "tool": "pylint",
+                "issue_code": "C0116",
+                "issue_description": "The code lacks a function or method docstring which is a description of what the function does, its parameters, and its return value. This makes it difficult for other developers to understand the purpose of the function and how to use it.",
+                "fix_recommendation": "Add a docstring to the function that describes what the function does, its parameters, and its return value. For example, the docstring for this function could be:\n\n```\ndef sum(a, b):\n    \"\"\"\n    Returns the sum of the common divisors of two numbers.\n\n    Parameters:\n    a (int): First number\n    b (int): Second number\n\n    Returns:\n    int: Sum of common divisors of a and b\n    \"\"\"\n\n    # Find the smaller number between a and b\n    smaller = min(a, b)\n\n    # Initialize the sum of common divisors to zero\n    common_divisors_sum = 0\n\n    # Loop through all the numbers from 1 to the smaller number\n    for i in range(1, smaller+1):\n\n        # Check if i is a divisor of both a and b\n        if a % i == 0 and b % i == 0:\n\n            # If i is a common divisor, add it to the sum\n            common_divisors_sum += i\n\n    # Return the sum of common divisors\n    return common_divisors_sum\n``` \n\nThis will make it easier for other developers to understand the purpose of the function and how to use it."
+            }
+        ]
+    }
+]
