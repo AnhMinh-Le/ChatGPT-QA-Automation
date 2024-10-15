@@ -187,7 +187,7 @@ if __name__ == "__main__":
         for row in csv_reader:
             csv_data.append(row)
 
-    sample = get_complete_data(processed_json_data, csv_data)[124:126]
+    sample = get_complete_data(processed_json_data, csv_data)[350:365]
     generate_issue_description_and_fix_recommendation('MBPP', sample)
 
 
