@@ -103,9 +103,10 @@ def generate_issue_description_and_fix_recommendation(name_of_dataset, combined_
                 "Focus on identifying any quality issues in the code and providing recommendations to improve it. "
                 "For each issue, provide both an issue description and a fix recommendation that you generate. "
                 "Also, ensure that your response includes line numbers where applicable.\n\n"
-                "With issue description, you need to summarize the code issues, extend the issue's context, and clearly indicate the line numbers for each issue, if applicable.\n"
-                "With fix recommendation, you need to provide detailed suggestions as specifically as possible for improvements in the code. "
-                "REMEMBER: find any additional issues (if they exist) or quality concerns and include their corresponding line numbers.\n\n"
+                "In the issue description, clearly summarize the code issues, explain their context, and highlight the affected lines. \n"
+                "In the fix recommendation, offer specific and actionable suggestions for improving the code, with line numbers where necessary. "
+                "INCLUDE THE RELEVANT PROBLEMATIC CODE SNIPPET DIRECTLY WITHIN THE ISSUE DESCRIPTION FOR BETTER CLARITY.\n"
+                "With fix recommendation, you need to provide detailed suggestions as specifically as possible for improvements in the code. \n\n"
                 "Please generate an issue description followed by a fix recommendation."
             )
 
@@ -118,8 +119,9 @@ def generate_issue_description_and_fix_recommendation(name_of_dataset, combined_
                 f"Here is the existing code:\n{solution}\n\n"
                 f"Quality issues detected by Static Analysis Tools:\n{issue_description}\n\n"
                 "Please provide the issue description and fix recommendation in this format:\n\n"
-                "Issue Description: <Your detailed issue description here>\n"
+                "Issue Description: <A detailed description of the issue, including the relevant problematic code snippet>\n"
                 "Fix Recommendation: <Your detailed fix recommendation here>"
+                "REMEMBER:INCLUDE THE RELEVANT PROBLEMATIC CODE SNIPPET DIRECTLY WITHIN THE ISSUE DESCRIPTION FOR BETTER CLARITY.\n"
             )
 
 
