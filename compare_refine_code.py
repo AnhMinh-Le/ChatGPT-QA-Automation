@@ -5,7 +5,7 @@ import ast
 
 
 def extract_test_cases(text):
-    test_case_blocks = re.split(r"(?:Test case \d+:)", text)[1:]  # Bỏ qua phần đầu tiên vì nó trống
+    test_case_blocks = re.split(r"(?:Test case \d+:)", text)[1:]  
     test_cases = []
 
     for block in test_case_blocks:
